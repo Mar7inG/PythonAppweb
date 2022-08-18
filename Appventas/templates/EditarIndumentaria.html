@@ -1,0 +1,25 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block bloquecambia %}
+
+    <h2 >Formulario - Editar bicicletas</h2>
+
+    
+        
+       
+        <form action="{% url 'Editarindu' id %}" method = "POST">{% csrf_token %}
+
+
+             {{InduFormulario.as_table}}
+
+             <input class="btn btn-outline-dark mt-auto" type="submit" value="Enviar"  href="">
+
+        </form>
+    
+        
+
+    <div class="text-center"><a  class="btn btn-outline-dark mt-auto" href="{% url 'Formularios' %}">Volver</a></div>
+      
+    

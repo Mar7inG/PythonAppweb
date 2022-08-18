@@ -1,0 +1,33 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block bloquecambia %}
+
+    <h2 class="text-center">Formulario - Agregar Repuesto</h2>
+    <br><br>
+    {% if miFormulario.errors %}
+
+    <p style="color: red;"> Están mal los datos, revisar</p>
+
+    {% endif %}
+    <form class="text-center" action="" method="POST">{% csrf_token %}
+        
+       
+        <table>
+            {{ RepuestosFormularios.as_table}}
+        </table>
+        <br>
+        <br>
+        <br>
+        
+    
+        <input class="btn btn-outline-dark mt-auto" type="submit" value="Enviar"  href="">
+        <br><br><br>
+        <div class="text-center"><a  class="btn btn-outline-dark mt-auto" href="{% url 'Formularios' %}">Volver</a></div>
+        <br>
+    </form>
+    
+
+
+    {% endblock bloquecambia %}

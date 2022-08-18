@@ -1,0 +1,30 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block bloquecambia %}
+
+    <h2 >Formulario - Editar repuestos</h2>
+
+    
+        
+       
+        <form action="{% url 'Editarrepu' id %}" method = "POST">{% csrf_token %}
+
+
+             {{RepuFormulario.as_table}}
+
+             <input class="btn btn-outline-dark mt-auto" type="submit" value="Enviar"  href="">
+
+        </form>
+    
+        
+
+    <div class="text-center"><a  class="btn btn-outline-dark mt-auto" href="/Appventas/">Volver</a></div>
+      
+    
+    
+
+
+
+{% endblock bloquecambia %}

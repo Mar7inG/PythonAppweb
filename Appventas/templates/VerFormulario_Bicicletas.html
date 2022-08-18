@@ -1,0 +1,40 @@
+{% extends 'Padre.html' %}
+
+{% load static %}
+
+{% block bloquecambia %}
+
+<div  class="container px-4 px-lg-1 mt-1">
+    <h3>Lista de Bicicletas</h3>
+    <br>
+
+    
+         
+        {% for Item in Bicicletas %}
+            
+            <li>Codigo: {{Item.codigo}}. Tipo: {{Item.tipo}}. Marca: {{Item.marca}}. Modelo: {{Item.modelo}}. Color: {{Item.color}}. Categoria: {{Item.categoria}} Descripcion: {{Item.descripcion}}. Precio: ${{Item.precio}}.</li>
+            <div>
+                <form action="{% url 'Eliminarbici' Item.id %}" method = "POST">{% csrf_token %}
+                    
+                     <button type="submit">Eliminar</button>
+
+                </form>
+                <button>
+                     <a href="{% url 'Editarbicis' Item.id %}">Editar</a>
+                </button>
+            </div>
+        {% endfor %}
+
+
+    <br>
+
+        
+    
+
+ <a href="{% url 'bici_formulario' %}">Agregar otra bicicleta</a>
+        
+   <div class="text-center" ><a class="btn btn-outline-dark mt-auto" href="/Appventas/">VOLVER</a></div>
+    
+    <br><br>
+</div>
+{% endblock bloquecambia %}

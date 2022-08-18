@@ -1,0 +1,30 @@
+{% extends 'Padre.html' %}
+
+{% load static %}
+
+{% block bloquecambia %}
+
+<br>
+
+<div class="text-center" class="btn btn-outline-dark mt-auto">
+    <br>
+    <h3>LOGIN</h3>
+    <h4>{{mensaje}}</h4>
+    <br>
+    <br>
+    <form action="" method="POST">
+     {% csrf_token %}
+
+
+     {{form.as_p}}
+
+     <button type="submit" class="btn btn-outline-dark mt-auto" style="margin-right: 24px">Iniciar Sesion</button><a class="btn btn-outline-dark mt-auto" href="{% url 'Registrarse' %}" style="margin-left: 24px">Registrarse</a>
+     
+    </form>
+    
+    <br>
+    <br>
+<div class="text-center" ><a class="btn btn-outline-dark mt-auto" href="/Appventas/">Volver</a></div>
+
+<br><br>
+{% endblock bloquecambia %}

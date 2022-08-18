@@ -1,0 +1,39 @@
+{% extends 'Padre.html' %}
+
+{% load static %}
+
+{% block bloquecambia %}
+
+<div  class="container px-4 px-lg-1 mt-1">
+    <h3>Lista de Indumentaria</h3>
+    <br>
+        {% for item in Indumentaria  %}
+        <li>Codigo: {{item.codigo}}. Tipo: {{item.tipo}}. Marca: {{item.marca}}. Modelo: {{item.modelo}}. Descripcion: {{item.descripcion}}. Precio: ${{item.precio}}.</li>
+        <div>
+            <form action="{% url 'Eliminarindu' item.id %}" method = "POST">{% csrf_token %}
+                
+                 <button type="submit">Eliminar</button>
+
+            </form>
+        </div>
+        {% endfor %}
+        
+    <br><br>
+    <br><br>
+    
+        
+   <div class="text-center" ><a class="btn btn-outline-dark mt-auto" href="/Appventas/">VOLVER</a></div>
+    
+    <br><br>
+</div>
+{% endblock bloquecambia %}
+
+
+
+<div>
+    <form action="{% url 'Eliminarbici' %}" method ="POST">{% csrf_token %}
+        
+         <button type="submit">Eliminar</button>
+
+    </form>
+</div>

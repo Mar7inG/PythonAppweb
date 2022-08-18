@@ -1,0 +1,27 @@
+{% extends "padre.html" %}
+
+{% load static %}
+
+{% block bloquecambia %}
+
+    <h2 class="text-center">Buscar Bicicletas</h2>
+    <br><br>
+    <form class="text-center" action="{% url 'Busqueda1' %}" method="GET">{% csrf_token %}
+        
+        
+        <p>Ingrese el modelo: <input    type="text" name="modelo" ></p>
+        
+       <br>
+    
+        <input class="btn btn-outline-dark mt-auto"  type="submit" value="Buscar"  >
+
+        <br><br>
+    </form>
+    <div class="text-center" ><a class="btn btn-outline-dark mt-auto" href="{% url 'Formularios' %}">VOLVER</a></div>
+
+    <br><br>
+    
+
+
+
+{% endblock bloquecambia %}

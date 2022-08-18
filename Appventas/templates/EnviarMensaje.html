@@ -1,0 +1,36 @@
+{% extends 'Padre.html' %}
+
+{% load static %}
+
+{% block bloquecambia %}
+<header class="bg-dark py-5">
+
+
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">BICICLETERIA PEPITO</h1>
+            <p class="lead fw-normal text-white-50 mb-0">TODO LO QUE NECESITE Y MAS...</p>
+        </div>
+    </div>
+</header>
+ <br>
+ <h3 >Complete los datos para enviar el mensaje:</h3>
+ <br><br>
+ <form  class="text-center" action="" method="POST">{% csrf_token %}
+     
+    
+     <table>
+          {{MensajeEnviar.as_table}}
+     </table>
+     <br>
+     <br>
+     
+     <input class="btn btn-outline-dark mt-auto" type="submit" value="Enviar"  href="">
+     <br><br><br>
+     <div class="text-center"><a  class="btn btn-outline-dark mt-auto" href="/Appventas/">Volver</a></div>
+     <br>
+ </form>
+ 
+
+
+{% endblock bloquecambia %}

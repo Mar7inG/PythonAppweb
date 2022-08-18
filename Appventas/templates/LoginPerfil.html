@@ -1,0 +1,36 @@
+{% extends 'Padre.html' %}
+
+{% load static %}
+
+{% block bloquecambia %}
+
+<br>
+<h3 style= "margin-left: 50px">Perfil</h3>
+<h4 style= "margin-left: 50px">Bien venido {{user.username}}</h4>
+    <p style= "margin-left: 50px">Datos</p>
+    <p style= "margin-left: 50px">Nombre: {{user.first_name}}</p>
+    <p style= "margin-left: 50px">Apellido: {{user.last_name}}</p>
+    <p style= "margin-left: 50px">Emeail: {{user.email}}</p>
+<div style= "margin-left: 50px" >
+    <br>
+    
+    
+
+    
+    <form  method="POST">{% csrf_token %}
+     
+        
+            {{PerfilFormulario.as_p}}
+
+        
+        <br>
+        <button type="submit" >Guardar </button>
+     
+    </form>
+    
+    <br>
+    <br>
+<div class="text-center" ><a class="btn btn-outline-dark mt-auto" href="{% url 'INICIO' %}">Volver</a></div>
+
+<br><br>
+{% endblock bloquecambia %}

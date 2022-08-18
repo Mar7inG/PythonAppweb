@@ -1,0 +1,27 @@
+{% extends 'Padre.html' %}
+
+{% load static %}
+
+{% block bloquecambia %}
+
+    <h2>Se busco las Bicicletas con modelos: {{modelo}}</h2>
+
+    
+    {% if modelos %}
+        
+        {% for item in modelos  %}
+        <li>Codigo: {{item.codigo}}. Marca: {{item.marca}}. Modelo: {{item.modelo}}. Rodado: {{item.rodado}}. Color: {{item.color}}. Descripcion: {{item.descripcion}}. Precio: ${{item.precio}}.</li>
+        {% endfor %}
+    {% else %}
+        <p>No hay resultados.</p>        
+        
+    {% endif %}
+    <br>
+    <div class="text-center" ><a class="btn btn-outline-dark mt-auto" href="{% url 'Formularios' %}">VOLVER</a></div>
+
+    <br>
+        
+
+
+
+{% endblock bloquecambia %}
